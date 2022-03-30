@@ -14,7 +14,7 @@ namespace IBASEmployeeService.Controllers
         }
 
 
-        [HttpGet(Name = "GetEmployeeEntries")]
+        [HttpGet(Name = "GetEmployees")]
         public IEnumerable<Employee> Get()
         {
             var employees = new List<Employee>() {
