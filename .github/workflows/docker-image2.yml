@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main ]
 
+env:
+  IMAGENAME: ${{ secrets.REGISTRY_LOGIN_SERVER}}/ibasemployeeservice:latest
+
 jobs:
 
   build:
@@ -20,5 +23,5 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER}}/ibasemployeeservice:latest
-        docker push ${{ secrets.REGISTRY_LOGIN_SERVER}}/ibasemployeeservice:latest
+        docker build . -t $IMAGENAME
+        docker push $IMAGENAME
